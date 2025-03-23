@@ -126,6 +126,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Context\BankDbContext.cs" />
+    <Compile Include="Data\Migrations\202503232135474_Init.cs" />
+    <Compile Include="Data\Migrations\202503232135474_Init.Designer.cs">
+      <DependentUpon>202503232135474_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="DI\AutoMapperResolver.cs" />
     <Compile Include="Entites\BaseEntity.cs" />
     <Compile Include="Entites\User.cs" />
@@ -134,7 +139,11 @@
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\IGenericRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Migrations\202503232135474_Init.resx">
+      <DependentUpon>202503232135474_Init.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
