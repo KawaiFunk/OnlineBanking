@@ -1,6 +1,9 @@
 ﻿using AizenBankV1.Web.Extensions;
+using AutoMapper;
 using Core.Services.UserServices;
 using Domain.Data.Context;
+using Domain.Entites;
+using Domain.Repositories;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -13,8 +16,12 @@ namespace Web.Attributes
 
         public RequireLoginAttribute()
         {
-            BankDbContext context = new BankDbContext();
-            _userService = new UserService(context);
+            var context = new BankDbContext();
+            var userRepository = new GenericRepository<User>(context);
+            var sessionRepository = new GenericRepository<Session>(context);
+            var mapper = DependencyResolver.Current.GetService<IMapper>();
+
+            _userService = new UserService(mapper, userRepository, sessionRepository);
         }
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)

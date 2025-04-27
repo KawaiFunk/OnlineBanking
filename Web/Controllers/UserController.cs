@@ -87,18 +87,20 @@ namespace Web.Controllers
         [HttpGet]
         public ActionResult LogOut()
         {
-            Session.Abandon();
-            FormsAuthentication.SignOut();
-            if (Response.Cookies["X-KEY"] != null)
+            var cookie = Request.Cookies["X-KEY"];
+            if (cookie != null)
             {
-                var cookie = new HttpCookie("X-KEY")
-                {
-                    Expires = DateTime.Now.AddDays(-1),
-                    HttpOnly = true
-                };
+                _userService.LogOut(cookie.Value);
+
+                cookie.Expires = DateTime.Now.AddDays(-1);
+                cookie.HttpOnly = true;
                 Response.Cookies.Add(cookie);
             }
-            return RedirectToAction("", "");
+
+            Session.Abandon();
+            FormsAuthentication.SignOut();
+
+            return RedirectToAction("Login", "User");
         }
     }
 }

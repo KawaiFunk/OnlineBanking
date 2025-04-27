@@ -12,5 +12,6 @@ namespace Core.Services.UserServices
         LogInResponse LogIn(UserLogInDTO user);
         HttpCookie Cookie(string email);
         User GetUserByCookie(string cookie);
+        void LogOut(string cookieValue);
     }
 }

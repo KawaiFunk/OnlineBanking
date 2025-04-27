@@ -1,16 +1,13 @@
 ﻿using AutoMapper;
 using Core.DTOs;
-using Domain.Data.Context;
 using Domain.Entites;
 using Domain.Repositories;
 using Helpers.Login;
 using Helpers.Responses;
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Data.Entity.Infrastructure.DependencyResolution;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 
 namespace Core.Services.UserServices
 {
@@ -20,11 +17,11 @@ namespace Core.Services.UserServices
         private readonly IGenericRepository<User> _userRepository;
         private readonly IGenericRepository<Session> _sessionRepository;
 
-        public UserService(BankDbContext context)
+        public UserService(IMapper mapper, IGenericRepository<User> userRepository, IGenericRepository<Session> sessionRepository)
         {
-            _mapper = DependencyResolver.Current.GetService<IMapper>();
-            _userRepository = new GenericRepository<User>(context);
-            _sessionRepository = new GenericRepository<Session>(context);
+            _mapper = mapper;
+            _userRepository = userRepository;
+            _sessionRepository = sessionRepository;
         }
 
         public void Register(UserRegisterDTO user)
@@ -127,6 +124,15 @@ namespace Core.Services.UserServices
             }
 
             return null;
+        }
+
+        public void LogOut(string cookieValue)
+        {
+            var session = _sessionRepository.GetAll().FirstOrDefault(x => x.CookieString == cookieValue);
+            if (session != null)
+            {
+                _sessionRepository.Delete(session.Id);
+            }
         }
     }
 }
