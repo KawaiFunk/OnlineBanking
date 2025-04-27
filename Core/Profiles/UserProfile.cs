@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Core.DTOs;
+using Core.DTOs.CardDTOs;
 using Core.Models;
+using Core.Models.CardModels;
 using Domain.Entites;
 using Web.Models;
 

@@ -1,5 +1,6 @@
 ﻿using Domain.Enums;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entites
@@ -20,5 +21,6 @@ namespace Domain.Entites
         public string PasswordHash { get; set; }
         public DateTime LastLogin { get; set; }
         public UserRole userRoles { get; set; }
+        public virtual ICollection<Card> Cards { get; set; }
     }
 }

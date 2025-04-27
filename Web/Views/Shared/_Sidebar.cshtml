@@ -18,7 +18,7 @@
 <li class="nav-item active">
     <a class="nav-link" href="@Url.Action("Index", "Home")">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Statistics</span>
+        <span>Main page</span>
     </a>
 </li>
 
@@ -27,7 +27,7 @@
 
 <!-- Heading -->
 <div class="sidebar-heading">
-    Interface
+    Actions
 </div>
 
 <!-- Nav Item - Pages Collapse Menu -->
@@ -35,13 +35,13 @@
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
        aria-expanded="false" aria-controls="collapseTwo">
         <i class="fas fa-fw fa-cog"></i>
-        <span>Components</span>
+        <span>Transfer</span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="@Url.Action("Buttons", "Components")">Buttons</a>
-            <a class="collapse-item" href="@Url.Action("Cards", "Components")">Cards</a>
+            <h6 class="collapse-header">Options:</h6>
+            <a class="collapse-item" href="@Url.Action("Buttons", "Components")">To another person</a>
+            <a class="collapse-item" href="@Url.Action("Cards", "Components")">To another card</a>
         </div>
     </div>
 </li>
@@ -59,12 +59,12 @@
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
        aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-folder"></i>
-        <span>Pages</span>
+        <span>Managers</span>
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="@Url.Action("Login", "Account")">Login</a>
+            <a class="collapse-item" href="@Url.Action("Index", "Card")">My Cards</a>
             <a class="collapse-item" href="@Url.Action("Register", "Account")">Register</a>
             <a class="collapse-item" href="@Url.Action("ForgotPassword", "Account")">Forgot Password</a>
             <a class="collapse-item" href="@Url.Action("Transfer", "Banking")">Transfer Page</a>
