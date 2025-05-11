@@ -14,6 +14,7 @@ namespace Core.Profiles
             CreateMap<UpsertCardModel, Card>().ReverseMap();
             CreateMap<CardCreateDTO, UpsertCardModel>().ReverseMap();
             CreateMap<CardUpdateDTO, CardUpdateDTO>().ReverseMap();
+            CreateMap<CardUpdateDTO,  UpsertCardModel>().ReverseMap();
         }
     }
 }

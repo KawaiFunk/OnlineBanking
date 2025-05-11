@@ -1,10 +1,10 @@
-﻿namespace Domain.Data.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+﻿using System;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Linq;
 
+namespace Domain.Data.Migrations
+{
     internal sealed class Configuration : DbMigrationsConfiguration<Domain.Data.Context.BankDbContext>
     {
         public Configuration()

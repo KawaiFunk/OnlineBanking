@@ -138,10 +138,23 @@
     <Compile Include="Data\Migrations\202504270935380_MyMigrationName.Designer.cs">
       <DependentUpon>202504270935380_MyMigrationName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\202505111059027_AddHistoryTable.cs" />
+    <Compile Include="Data\Migrations\202505111059027_AddHistoryTable.Designer.cs">
+      <DependentUpon>202505111059027_AddHistoryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Migrations\202505111108055_AddHistoryTableFix.cs" />
+    <Compile Include="Data\Migrations\202505111108055_AddHistoryTableFix.Designer.cs">
+      <DependentUpon>202505111108055_AddHistoryTableFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Migrations\202505111114376_AddHistoryTableFixFix.cs" />
+    <Compile Include="Data\Migrations\202505111114376_AddHistoryTableFixFix.Designer.cs">
+      <DependentUpon>202505111114376_AddHistoryTableFixFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="DI\AutoMapperResolver.cs" />
     <Compile Include="Entites\BaseEntity.cs" />
     <Compile Include="Entites\Card.cs" />
+    <Compile Include="Entites\HistoryLog.cs" />
     <Compile Include="Entites\Session.cs" />
     <Compile Include="Entites\User.cs" />
     <Compile Include="Enums\UserRole.cs" />
@@ -158,6 +171,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\202504270935380_MyMigrationName.resx">
       <DependentUpon>202504270935380_MyMigrationName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\202505111059027_AddHistoryTable.resx">
+      <DependentUpon>202505111059027_AddHistoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\202505111108055_AddHistoryTableFix.resx">
+      <DependentUpon>202505111108055_AddHistoryTableFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\202505111114376_AddHistoryTableFixFix.resx">
+      <DependentUpon>202505111114376_AddHistoryTableFixFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

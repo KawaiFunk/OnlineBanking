@@ -73,6 +73,7 @@ namespace Web
             // Register UserController explicitly
             builder.RegisterType<UserController>().InstancePerRequest();
             builder.RegisterType<CardController>().InstancePerRequest();
+            builder.RegisterType<AdminController>().InstancePerRequest();
         }
     }
 }
